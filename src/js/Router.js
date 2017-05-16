@@ -1,11 +1,11 @@
 define([
    'module',
+   'SignIn',
+   'SignUp',
    'Main',
-   'Rp',
-   'Log',
    'backbone'
    ],
-   function(module, Main, Rp, Log, Backbone){
+   function(module, SignIn, SignUp, Main, Backbone){
 
 	'use strict'
 
@@ -24,7 +24,9 @@ define([
             window.router = this.routers = new (Backbone.Router.extend());
 
             this.routers.route('','defaultGuide', this.changeHash);
-            this.routers.route('*guideType', 'changeGuide', this.changeHash);
+
+            this.routers.route('*main', 'changeGuide', this.changeHash);
+            this.routers.route('*main/:sub', 'changeGuide', this.changeHash);
 
             Backbone.history.start({pushstate:true})
         },
@@ -33,7 +35,8 @@ define([
          * 처음 라우터 설정
          */
         startRouter : function(){
-            var hash = APORIA.util.parseHash();
+
+            var hash = FS2.util.parseHash();
 
             if(hash) {
                 this.routers.navigate(hash.join('/'), { trigger: false, replace: true });
@@ -42,22 +45,37 @@ define([
             }
         },
 
-        changeHash( guideType ){
+        changeHash( MainPath, SubPath ){
 
             if(this.prevView != null){
                 this.prevView.hide();
             }
 
-            var mainMenu = guideType;
+            var mainMenu = MainPath;
 
             switch(mainMenu){
                 case 'signin' :
+                    SignIn.show();
+                    SignIn.render(SubPath);
+                    this.prevView = SignIn;
     			break;
                 case 'signup' :
+                    SignUp.show();
+                    SignUp.render(SubPath);
+                    this.prevView = SignUp;
     			break;
-                    Main.render();
-                    this.prevView = Main;
+                case 'party' :
+    			case 'story' :
+    			case 'now' :
+                case 'search' :
+                case 'setting' :
+    			case null :
                     Main.show();
+                    Main.render(mainMenu);
+                    this.prevView = Main;
+    			break;
+    			default :
+                    window.location.href="#"
     			break;
             }
         }

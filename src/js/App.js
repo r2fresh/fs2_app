@@ -6,11 +6,7 @@
 */
 requirejs.config({
 	baseUrl: '/js',
-	packages: [{
-		name: 'moment',
-		location: '../lib/moment/',
-		main: 'moment'
-	}],
+
 	paths: {
 		'text':'../lib/text/text',
 		'jquery':'../lib/jquery/dist/jquery',
@@ -18,9 +14,7 @@ requirejs.config({
 		'Handlebars':'../lib/handlebars/handlebars',
 		'underscore':'../lib/underscore/underscore',
 		'backbone':'../lib/backbone/backbone',
-        'tpl':'../template',
-        'global':'Global',
-        //'ktmap':'../lib/kt-map/ollehmap-all-desktop'
+        'tpl':'../template'
 	},
 	shim:{
 		'backbone':{
@@ -39,11 +33,9 @@ requirejs([
 	'backbone',
     'Router',
 	'bootstrap',
-    'moment/locale/ko',
-    'global',
-    //'ktmap'
+    'Common'
 ],
-function(Handlebars, Backbone, Router){
+function(Handlebars, Backbone, Router, moment){
 
     var prevView = null, routers = null;
 
