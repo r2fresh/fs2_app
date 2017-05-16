@@ -1,11 +1,12 @@
 define([
    'module',
+   'Intro',
    'SignIn',
    'SignUp',
    'Main',
    'backbone'
    ],
-   function(module, SignIn, SignUp, Main, Backbone){
+   function(module, Intro, SignIn, SignUp, Main, Backbone){
 
 	'use strict'
 
@@ -69,11 +70,17 @@ define([
     			case 'now' :
                 case 'search' :
                 case 'setting' :
-    			case null :
                     Main.show();
                     Main.render(mainMenu);
                     this.prevView = Main;
     			break;
+                case 'intro' :
+                case null :
+                    console.log('111')
+                    Intro.show();
+                    Intro.render();
+                    this.prevView = Intro;
+                break;
     			default :
                     window.location.href="#"
     			break;
