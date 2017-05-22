@@ -2,20 +2,137 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="cleartype" content="on">
+        <meta name="MobileOptimized" content="320">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
         <title>Friday Saturday Sunday</title>
         <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" charset="utf-8">
-        <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css" charset="utf-8">
+        <!-- <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css" charset="utf-8"> -->
 
-        <link rel="stylesheet" href="/css/common.css" charset="utf-8">
+        <style>
+        body {
+            width: 100%;
+            height: 100%;
+            }
 
-        <script src="/lib/requirejs/require.js" data-main="/js/App.js" charset="utf-8"></script>
+            .slideout-menu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 0;
+            width: 256px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            display: none;
+            }
+
+            .slideout-panel {
+            position: relative;
+            z-index: 1;
+            }
+
+            .slideout-open,
+            .slideout-open body,
+            .slideout-open .slideout-panel {
+            overflow: hidden;
+            }
+
+            .slideout-open .slideout-menu {
+            display: block;
+            }
+
+            /* Custom */
+            #main {
+            background: white;
+            height: 100vmin!important;
+            }
+
+            #navbar-main {
+            background: #eee;
+            }
+
+            #navbar-main h4 {
+            margin-top: 30px;
+            padding: 0 15px;
+            }
+
+            #navbar-main ul li a {
+            border-radius: 0;
+            }
+        </style>
+
+        <!-- <link rel="stylesheet" href="/css/common.css" charset="utf-8"> -->
+
+        <!-- <script src="/lib/requirejs/require.js" data-main="/js/App.js" charset="utf-8"></script> -->
     </head>
     <body>
-        <div id="intro" class="displayNone"></div>
+        <!-- <div id="intro" class="displayNone"></div>
         <div id="sign_in" class="displayNone"></div>
         <div id="sign_up" class="displayNone"></div>
-        <div id="main" class="displayNone"></div>
+        <div id="main" class="displayNone"></div> -->
+
+        <nav id="navbar-main">
+          <header>
+            <p class="text-center">
+              <br><img class="svg" src="http://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="Bootstrap" width="124" height="124">
+            </p>
+          </header>
+          <h4>Links</h4>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+            <li><a href="https://mango.github.io/slideout/">Slideout.js <small>by Mango</small></a></li>
+          </ul>
+          <h4>Other links</h4>
+          <ul class="nav nav-pills nav-stacked">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="active"><a href="#">Link active</a></li>
+            <li><a href="#">Other link</a></li>
+            <li><a href="#">Whatever</a></li>
+          </ul>
+        </nav>
+
+        <main id="main">
+          <div class="container">
+            <header class="page-header">
+              <h1>Bootstrap + Slideout.js</h1>
+              <p class="lead">A touch slideout navigation menu for your mobile web apps.</p>
+            </header>
+            <article>
+              <button type="button" class="toggle-button btn btn-primary btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">☰ Menu</button>
+            </article>
+          </div>
+        </main>
+
+        <script src="/lib/slideout.js/dist/slideout.min.js"></script>
+        <script>
+        // Config Options
+            var slideout = new Slideout({
+            'panel': document.getElementById('main'),
+            'menu': document.getElementById('navbar-main'),
+            'padding': 256,
+            'tolerance': 70
+            });
+
+            // Default Open
+            slideout.open();
+
+            // Toggle button
+            document.querySelector('.toggle-button').addEventListener('click', function() {
+                slideout.toggle();
+                if(slideout.isOpen()){
+                    //alert("You Opened!");
+                }else{
+                    //alert("You Closed!");
+                }
+            });
+
+        </script>
     </body>
 </html>
