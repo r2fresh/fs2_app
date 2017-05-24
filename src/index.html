@@ -12,127 +12,15 @@
         <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" charset="utf-8">
         <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.css" charset="utf-8">
 
-        <style>
-        body {
-            width: 100%;
-            height: 100%;
-            }
+        <link rel="stylesheet" href="/css/common.css" charset="utf-8">
+        <link rel="stylesheet" href="/css/basic.css" charset="utf-8">
 
-            .slideout-menu {
-            position: fixed;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 0;
-            width: 256px;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            display: none;
-            }
-
-            .slideout-panel {
-            position: relative;
-            z-index: 1;
-            }
-
-            .slideout-open,
-            .slideout-open body,
-            .slideout-open .slideout-panel {
-            overflow: hidden;
-            }
-
-            .slideout-open .slideout-menu {
-            display: block;
-            }
-
-            /* Custom */
-            #main {
-            background: white;
-            height: 100vmin!important;
-            }
-
-            #navbar-main {
-            background: #eee;
-            }
-
-            #navbar-main h4 {
-            margin-top: 30px;
-            padding: 0 15px;
-            }
-
-            #navbar-main ul li a {
-            border-radius: 0;
-            }
-        </style>
-
-        <!-- <link rel="stylesheet" href="/css/common.css" charset="utf-8"> -->
-
-        <!-- <script src="/lib/requirejs/require.js" data-main="/js/App.js" charset="utf-8"></script> -->
+        <script src="/lib/requirejs/require.js" data-main="/js/App.js" charset="utf-8"></script>
+        
     </head>
     <body>
-        <!-- <div id="intro" class="displayNone"></div>
-        <div id="sign_in" class="displayNone"></div>
-        <div id="sign_up" class="displayNone"></div>
-        <div id="main" class="displayNone"></div> -->
-
-        <nav id="navbar-main">
-
-            <!-- <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container-fluid">
-                  <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                      <li><a href="#"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="../navbar/"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a></li>
-                      <li><a href="../navbar-static-top/"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-              </nav> -->
-
-
-              <div>
-                  <ul style="float:left;padding:0px;">
-                      <li style="position: relative;display: block;">
-                          <a href="#" class="btn btn-defualt btn-xs"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
-                      </li>
-                  </ul>
-                  <ul style="float:right;padding:0px;">
-                      <li style="position: relative;display: block;float:left;">
-                          <a href="#" class="btn btn-defualt btn-xs"><i class="fa fa-cog fa-2x" aria-hidden="true"></i></a>
-                      </li>
-
-                      <li style="position:relative;display: block;float:left">
-                          <a href="#" class="btn btn-defualt btn-xs"><i class="fa fa-times fa-2x" aria-hidden="true"></i></a>
-                      </li>
-                  </ul>
-              </div>
-
-              <div style="margin-top:50px;min-height:100px;">
-                  <i class="fa fa-user-circle fa-3x" aria-hidden="true"></i>로그인 해주세요
-              </div>
-
-              <ul class="list-group">
-                <li class="list-group-item"><i class="fa fa-user" aria-hidden="true"></i> 내 프로필</li>
-                <li class="list-group-item"><i class="fa fa-shopping-bag" aria-hidden="true"></i> 스토어</li>
-                <li class="list-group-item"><i class="fa fa-info-circle" aria-hidden="true"></i> 공지사항</li>
-                <li class="list-group-item"><i class="fa fa-phone-square" aria-hidden="true"></i> 문의하기</li>
-              </ul>
-        </nav>
-
-        <main id="main">
-          <div class="container">
-            <header class="page-header">
-              <h1>Bootstrap + Slideout.js</h1>
-              <p class="lead">A touch slideout navigation menu for your mobile web apps.</p>
-            </header>
-            <article>
-              <button type="button" class="toggle-button btn btn-primary btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">☰ Menu</button>
-            </article>
-          </div>
-        </main>
+        <nav id="navbar-main"></div>
+        <main id="main"></main>
 
         <script src="/lib/slideout.js/dist/slideout.min.js"></script>
         <script>

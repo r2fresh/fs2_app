@@ -6,7 +6,11 @@
 */
 requirejs.config({
 	baseUrl: '/js',
-
+	packages: [{
+		name: 'moment',
+		location: '../lib/moment/',
+		main: 'moment'
+	}],
 	paths: {
 		'text':'../lib/text/text',
 		'jquery':'../lib/jquery/dist/jquery',
@@ -14,7 +18,8 @@ requirejs.config({
 		'Handlebars':'../lib/handlebars/handlebars',
 		'underscore':'../lib/underscore/underscore',
 		'backbone':'../lib/backbone/backbone',
-        'tpl':'../template'
+        'tpl':'../template',
+		'common':'utils/common',
 	},
 	shim:{
 		'backbone':{
@@ -33,9 +38,10 @@ requirejs([
 	'backbone',
     'Router',
 	'bootstrap',
-    'Common'
+    'moment/locale/ko',
+    'common',
 ],
-function(Handlebars, Backbone, Router, moment){
+function(Handlebars, Backbone, Router){
 
     var prevView = null, routers = null;
 
@@ -47,14 +53,7 @@ function(Handlebars, Backbone, Router, moment){
 		Router.init();
 	}
 
-	/*
-	*
-	*/
-    /*
-	*
-	*/
 	function setHandlebars(){
-
 	}
 
 	init();
