@@ -4,7 +4,8 @@
   "description": "금토일 소모임",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
