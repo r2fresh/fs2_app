@@ -16,35 +16,10 @@
         <link rel="stylesheet" href="/css/basic.css" charset="utf-8">
 
         <script src="/lib/requirejs/require.js" data-main="/js/App.js" charset="utf-8"></script>
-        
+
     </head>
     <body>
-        <nav id="navbar-main"></div>
-        <main id="main"></main>
-
-        <script src="/lib/slideout.js/dist/slideout.min.js"></script>
-        <script>
-        // Config Options
-            var slideout = new Slideout({
-            'panel': document.getElementById('main'),
-            'menu': document.getElementById('navbar-main'),
-            'padding': 256,
-            'tolerance': 70
-            });
-
-            // Default Open
-            slideout.open();
-
-            // Toggle button
-            document.querySelector('.toggle-button').addEventListener('click', function() {
-                slideout.toggle();
-                if(slideout.isOpen()){
-                    //alert("You Opened!");
-                }else{
-                    //alert("You Closed!");
-                }
-            });
-
-        </script>
+        <nav id="nav-side"></nav>
+        <div id="main"></div>
     </body>
 </html>

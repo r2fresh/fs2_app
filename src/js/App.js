@@ -6,11 +6,13 @@
 */
 requirejs.config({
 	baseUrl: '/js',
-	packages: [{
-		name: 'moment',
-		location: '../lib/moment/',
-		main: 'moment'
-	}],
+	packages: [
+		{
+			name: 'moment',
+			location: '../lib/moment/',
+			main: 'moment'
+		}
+	],
 	paths: {
 		'text':'../lib/text/text',
 		'jquery':'../lib/jquery/dist/jquery',
@@ -18,8 +20,9 @@ requirejs.config({
 		'Handlebars':'../lib/handlebars/handlebars',
 		'underscore':'../lib/underscore/underscore',
 		'backbone':'../lib/backbone/backbone',
+		'slideout':'../lib/slideout.js/dist/slideout',
         'tpl':'../template',
-		'common':'utils/common',
+		'common':'Common',
 	},
 	shim:{
 		'backbone':{
@@ -37,6 +40,7 @@ requirejs([
 	'Handlebars',
 	'backbone',
     'Router',
+	'slideout',
 	'bootstrap',
     'moment/locale/ko',
     'common',

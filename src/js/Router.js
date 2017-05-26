@@ -1,12 +1,10 @@
 define([
    'module',
-   'Intro',
-   'SignIn',
-   'SignUp',
    'Main',
+   'NavSide',
    'backbone'
    ],
-   function(module, Intro, SignIn, SignUp, Main, Backbone){
+   function(module, Main, NavSide, Backbone){
 
 	'use strict'
 
@@ -17,8 +15,8 @@ define([
             this.routeStart();
     		this.startRouter();
 
-            // TopMenu.render();
-            // TopMenu.show();
+            NavSide.render();
+            NavSide.show();
         },
 
         routeStart : function(){
@@ -55,31 +53,31 @@ define([
             var mainMenu = MainPath;
 
             switch(mainMenu){
-                case 'signin' :
-                    SignIn.show();
-                    SignIn.render(SubPath);
-                    this.prevView = SignIn;
-    			break;
-                case 'signup' :
-                    SignUp.show();
-                    SignUp.render(SubPath);
-                    this.prevView = SignUp;
-    			break;
-                case 'party' :
-    			case 'story' :
-    			case 'now' :
-                case 'search' :
-                case 'setting' :
-                    Main.show();
-                    Main.render(mainMenu);
-                    this.prevView = Main;
-    			break;
-                case 'intro' :
+                // case 'signin' :
+                //     SignIn.show();
+                //     SignIn.render(SubPath);
+                //     this.prevView = SignIn;
+    			// break;
+                // case 'signup' :
+                //     SignUp.show();
+                //     SignUp.render(SubPath);
+                //     this.prevView = SignUp;
+    			// break;
+                // case 'party' :
+    			// case 'story' :
+    			// case 'now' :
+                // case 'search' :
+                // case 'setting' :
+                //     Main.show();
+                //     Main.render(mainMenu);
+                //     this.prevView = Main;
+    			// break;
+                // //case 'intro' :
                 case null :
                     console.log('111')
-                    Intro.show();
-                    Intro.render();
-                    this.prevView = Intro;
+                    Main.show();
+                    Main.render();
+                    this.prevView = Main;
                 break;
     			default :
                     window.location.href="#"
