@@ -1,10 +1,10 @@
 define([
    'module',
    'Main',
-   'NNavSide',
+   'NavSide',
    'backbone'
    ],
-   function(module, Main, NNavSide, Backbone){
+   function(module, Main, NavSide, Backbone){
 
 	'use strict'
 
@@ -15,8 +15,8 @@ define([
             this.routeStart();
     		this.startRouter();
 
-            NNavSide.render();
-            NNavSide.show();
+            NavSide.render();
+            NavSide.show();
         },
 
         routeStart : function(){

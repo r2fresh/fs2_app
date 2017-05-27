@@ -1,6 +1,6 @@
 define([
    'module',
-   'text!tpl/NNavSide.html',
+   'text!tpl/NavSide.html',
    'Handlebars',
    'backbone'
    ],
