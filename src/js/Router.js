@@ -17,7 +17,6 @@ define([
 
             NNavSide.render();
             NNavSide.show();
-            //test
         },
 
         routeStart : function(){
