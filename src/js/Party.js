@@ -7,7 +7,7 @@ define([
    function(module, Party, Handlebars, Backbone){
 	'use strict'
  	module.exports = new (Backbone.View.extend({
-        render:function(Sub){
+        render:function(){
             this.setElement('#party');
             if(this.$el.children().length === 0){
                 this.el.innerHTML = Party;

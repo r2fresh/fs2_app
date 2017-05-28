@@ -1,7 +1,7 @@
 {
   "name": "fs2_app",
   "version": "1.0.0",
-  "description": "금토일 소모임",
+  "description": "fs2 party",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

@@ -73,10 +73,10 @@ define([
                 //     this.prevView = Main;
     			// break;
                 // //case 'intro' :
+                case 'party' :
                 case null :
-                    console.log('111')
+                    Main.render(mainMenu);
                     Main.show();
-                    Main.render();
                     this.prevView = Main;
                 break;
     			default :
