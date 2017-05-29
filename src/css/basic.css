@@ -49,3 +49,13 @@ body {
     #navbar-main ul li a {
     border-radius: 0;
     }*/
+
+
+    .ksy:before,
+    .ksy:after{
+        display:table;
+        content:""
+    }
+    .ksy:after{
+        clear: both;
+    }
