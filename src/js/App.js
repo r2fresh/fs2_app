@@ -23,6 +23,7 @@ requirejs.config({
 		'slideout':'../lib/slideout.js/dist/slideout',
         'tpl':'../template',
 		'common':'Common',
+		'R2':'utils/r2'
 	},
 	shim:{
 		'backbone':{
@@ -44,6 +45,7 @@ requirejs([
 	'bootstrap',
     'moment/locale/ko',
     'common',
+	'R2'
 ],
 function(Handlebars, Backbone, Router){
 
