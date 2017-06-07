@@ -2,11 +2,12 @@ define([
    'module',
    'text!tpl/Main.html',
    'Party',
+   'PartyDetail',
    'Handlebars',
    'backbone',
    'slideout'
    ],
-   function(module, Main, Party, Handlebars, Backbone, Slideout){
+   function(module, Main, Party, PartyDetail, Handlebars, Backbone, Slideout){
 	'use strict'
  	module.exports = new (Backbone.View.extend({
         el: '#main',
@@ -22,6 +23,12 @@ define([
                     case 'party' :
                         Party.render();
                         Party.show();
+                        $('#home_tabs').removeClass('displayNone');
+                    break;
+                    case 'party_detail' :
+                        PartyDetail.render();
+                        PartyDetail.show();
+                        $('#home_tabs').addClass('displayNone');
                     break;
                 }
 

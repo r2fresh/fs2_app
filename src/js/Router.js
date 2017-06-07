@@ -73,6 +73,7 @@ define([
                 //     this.prevView = Main;
     			// break;
                 // //case 'intro' :
+                case 'party_detail' :
                 case 'party' :
                 case null :
                     Main.render(mainMenu);
